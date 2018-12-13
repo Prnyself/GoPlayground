@@ -1,8 +1,8 @@
 package serverRoutes
 
 import (
-	"net/http"
 	"fmt"
+	"net/http"
 )
 
 var MyRouter *http.ServeMux

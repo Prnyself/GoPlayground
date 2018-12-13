@@ -22,5 +22,15 @@ func main() {
 	for _, ch := range chs {
 		<-ch
 	}
+
+	ch1 := make(chan *int, 1)
+	tmp := 1
+	//fmt.Printf("%p\n", &tmp)
+	fmt.Printf("tmp value: %v, addr: %p\n", tmp, &tmp)
+	ch1 <- &tmp
+	tmp2 := <- ch1
+	//fmt.Printf("%p\n", &tmp2)
+	tmp = 2
+	fmt.Printf("tmp2 value: %v, addr: %p\n", *tmp2, tmp2)
 }
 

@@ -41,6 +41,7 @@ func main() {
 	//fmt.Println(numRead.Read())
 	var numRead Reader = &TriNumber{4, 5, 6}
 	fmt.Println(numRead.Read())
+	fmt.Printf("%T", numRead)
 
 	//var number ReadWriter = numRead
 
