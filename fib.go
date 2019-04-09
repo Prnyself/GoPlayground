@@ -27,6 +27,7 @@ func main() {
 	//	return x + y
 	//}
 	//fmt.Println(f(4,6))
+	// patch test
 }
 
 func fib(i int) (index, res int) {
