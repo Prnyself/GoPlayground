@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"runtime"
 )
 
@@ -14,7 +15,7 @@ func main() {
 		}
 	}()
 	Func1()
-	//panic("aaaa")
+	// panic("aaaa")
 }
 
 func Func1() {
@@ -30,16 +31,21 @@ func Func1() {
 
 func Func2() {
 	fmt.Println("in Func2")
-	Func3()
+	if err := Func3(); err != nil {
+		fmt.Printf("error get in func 2: %v", err)
+	}
 }
 
-func Func3() {
+func Func3() (err error) {
 	defer func() {
-		if err := recover(); err != nil {
+		if rec := recover(); rec != nil {
+			err = fmt.Errorf("%v", rec)
 			fmt.Println("err in func3:", err)
 			fmt.Println("recover in func3")
 		}
 	}()
 	fmt.Println("in Func3")
-	panic("func3 error")
+	i := 1
+	reflect.ValueOf(i).Elem()
+	return nil
 }

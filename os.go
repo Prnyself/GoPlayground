@@ -37,4 +37,8 @@ func main() {
 	str2 = getParentDirectory(str1)
 	fmt.Println(str2)
 
+	std1 := os.Stdout
+	std2 := os.Stdout
+	fmt.Printf("std1 == stdout? %v; std2 == stdout? %v; std1 == std2? %v\n",
+		std1 == os.Stdout, std2 == os.Stdout, std1 == std2)
 }
