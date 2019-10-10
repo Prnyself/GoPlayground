@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	password := "abc12345678&^%"
+	password := "abc123456"
 	bPassword := ([]byte)(password)
 	//wrongPassword := []byte("123")
 	digest, err := bcrypt.GenerateFromPassword(bPassword, bcrypt.DefaultCost)
